@@ -55,7 +55,7 @@ button {
     -moz-appearance: none;
 }
 
-button:hover, .eraser:hover, .eraser.active {
+button:hover, .eraser:hover {
     transform: scale(1.05);
 }
 
