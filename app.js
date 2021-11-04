@@ -10,16 +10,16 @@ const grid = document.querySelector(".grid");
 
 const clearBtn = document.querySelector("button.clear");
 clearBtn.addEventListener("click", function() {
-    // let size = parseInt(prompt("Enter a grid size between 1 and 100"));
-    // if (size <= 100 && size >= 1) {
-        // currentSize = size;
-        clearGrid();
-        gridSetup(currentSize);
-    // }
+    clearGrid();
+    gridSetup(currentSize);
 })
 
 const rainbowBtn = document.querySelector("button.rainbow");
+const eraserBtn = document.querySelector(".eraser");
+const colorBtn = document.querySelector(".color");
 rainbowBtn.onclick = () => setCurrentMode('rainbow');
+eraserBtn.onclick = () => setCurrentMode('eraser');
+colorBtn.onclick = () => setCurrentMode('color');
 
 const sizeValue = document.getElementById('sizeValue')
 const sizeSlider = document.getElementById('sizeSlider')
@@ -46,6 +46,8 @@ function changeColor(e) {
         const randomG = Math.floor(Math.random() * 256);
         const randomB = Math.floor(Math.random() * 256);
         e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+    } else if (currentMode == "eraser") {
+        e.target.style.backgroundColor = "white";
     }
 }
 
@@ -54,12 +56,23 @@ function clearGrid() {
 }
 
 function setCurrentMode(newMode) {
-    if (currentMode === 'rainbow') {
+    if (currentMode === 'eraser') {
+        eraserBtn.classList.remove('active');
+    } else if (currentMode === 'rainbow') {
         rainbowBtn.classList.remove('active');
-        currentMode = "color";
+    } else if (currentMode === "color") {
+        colorBtn.classList.remove('active');
+    }
+
+    if (newMode === 'eraser') {
+        eraserBtn.classList.add('active');
+        currentMode = 'eraser';
     } else if (newMode === 'rainbow') {
         rainbowBtn.classList.add('active');
         currentMode = 'rainbow';
+    } else if (newMode === 'color'){
+        colorBtn.classList.add('active');
+        currentMode = 'color';
     }
 }
 
