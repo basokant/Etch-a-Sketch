@@ -155,8 +155,10 @@ input[type='range']::-webkit-slider-thumb {
     }
     button {
         font-size: 0.8rem;
+        margin: 50px 5px;
     }
     .eraser {
         width: 40px;
+        margin: 50px 5px;
     }
 }
