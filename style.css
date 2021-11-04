@@ -17,12 +17,18 @@ h1 {
 
 .main {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .grid {
     display: grid;
-    width: 700px;
-    height: 700px;
+    width: 500px;
+    height: 500px;
     outline: 10px black solid;
+}
+
+button {
+    margin: 50px;
+    width: 50px;
 }
