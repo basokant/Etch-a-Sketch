@@ -50,9 +50,7 @@ function changeColor(e) {
 }
 
 function clearGrid() {
-    while (grid.firstChild) {
-        grid.removeChild(grid.firstChild);
-    }
+    grid.innerHTML = "";
 }
 
 function setCurrentMode(newMode) {
