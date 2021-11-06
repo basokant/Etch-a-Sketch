@@ -5,6 +5,8 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0;
 }
 .header {
     text-align: center;
